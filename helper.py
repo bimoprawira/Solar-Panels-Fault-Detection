@@ -211,7 +211,7 @@ def helpFunction():
     html_temp4 = """
                 <div style="padding:10px">
                     <div>
-                    <h3>Project Description</h3>
+                    <h3>Project Description Bimo KNTL</h3>
                     This project aims to detect faulty solar panels caused by factors like physical damage, dust, animal droppings, or snow coverage. It distinguishes defective panels from those in good condition to prevent further deterioration and ensure timely maintenance. 
                     The initiative aligns with promoting sustainable and clean energy (SDGs).🌼
                     </div>
