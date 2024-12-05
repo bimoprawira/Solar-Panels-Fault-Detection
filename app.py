@@ -28,7 +28,7 @@ except Exception as ex:
     print(ex)
 
 # Main page heading
-st.title("Solar Panel Fault Detection ☀️🛰️⚡")
+st.markdown("<h1 style='text-align: center;'>☀️Solar Panel Fault Detection🛰️</h1>", unsafe_allow_html=True)
 
 # Pilihan deteksi
 selected_option = st.selectbox('Silahkan Pilih Mode Deteksi:', settings.SOURCES_LIST)

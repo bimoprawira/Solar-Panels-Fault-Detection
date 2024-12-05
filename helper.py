@@ -201,12 +201,13 @@ def helpFunction():
         
     html_temp_about1= """
                 <div style="padding:10px; text-align:center;">
-                        <h2>
-                            Automated Real-Time Monitoring and AI Fault Detection System for Solar Panels Using Advanced Image Detection
-                        </h2>
-                    </div>
-                    """
+                    <h2>
+                        Automated Real-Time Monitoring and AI Fault Detection System for Solar Panels Using Advanced Image Detection
+                    </h2>
+                </div>
+                """
     st.markdown(html_temp_about1, unsafe_allow_html=True)
+    st.divider()
 
     html_temp4 = """
                 <div style="padding:10px">
