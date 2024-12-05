@@ -1,6 +1,7 @@
 # Python In-built packages
 from pathlib import Path
 import PIL
+import base64
 
 # External packages
 import streamlit as st
@@ -14,6 +15,31 @@ import helper
 #     page_title="Deteksi Objek | Yolov8",
 #     page_icon="🔍",
 # )
+
+# def set_background(image_path):
+#     """
+#     Fungsi untuk mengatur background dengan gambar lokal.
+#     :param image_path: Path ke gambar lokal
+#     """
+#     # Encode gambar sebagai Base64
+#     with open(image_path, "rb") as image_file:
+#         encoded_string = base64.b64encode(image_file.read()).decode()
+#     # Tambahkan ke CSS
+#     st.markdown(f"""
+#         <style>
+#         body {{
+#             background-image: url("data:image/jpeg;base64,{encoded_string}");
+#             background-size: cover;
+#             background-repeat: no-repeat;
+#             background-attachment: fixed;
+#             background-position: center;
+#             background-color: #f0f0f0; /* Warna fallback */
+#         }}
+#         </style>
+#         """, unsafe_allow_html=True)
+
+# # Set Background
+# set_background("assets/PanelBG-1.jpg")
 
 # settings
 model_type = 'Detection'
@@ -45,6 +71,8 @@ if selected_option == settings.HOME:
 elif selected_option == settings.IMAGE:
     tab1, tab2 = st.tabs(["Upload", "Buka Kamera"])
     with tab1:
+        # Slider untuk mengatur confidence
+        confidence = st.slider("Atur Confidence Level:", min_value=0.0, max_value=1.0, value=0.4, step=0.05)
         source_img = st.file_uploader(
             "Silahkan Mengupload Gambar", type=("jpg", "jpeg", "png"))
         
@@ -94,21 +122,63 @@ elif selected_option == settings.IMAGE:
                 else:
                     st.empty()
     with tab2:
+        # Slider untuk mengatur confidence
+        confidence = st.slider("Atur Confidence Level (Kamera):", min_value=0.0, max_value=1.0, value=0.4, step=0.05)
         helper.take_picture(confidence, model)
 
 # Jika pilihan video
 elif selected_option == settings.VIDEO:
     tab1, tab2 = st.tabs(["Upload", "Sumber Asal"])
     with tab1:
-        helper.process_uploaded_video(confidence, model)
+        # Slider untuk mengatur confidence
+        confidence = st.slider(
+            "Atur Confidence Level (Video):", 
+            min_value=0.0, 
+            max_value=1.0, 
+            value=st.session_state.get("video_confidence", 0.4), 
+            step=0.05,
+            key="video_confidence"
+        )
+        # Confidence langsung dipakai di fungsi helper
+        helper.process_uploaded_video(st.session_state.video_confidence, model)
 
     with tab2:
-        helper.play_stored_video(confidence, model)
+        # Slider untuk mengatur confidence
+        confidence = st.slider(
+            "Atur Confidence Level (Sumber Asal):", 
+            min_value=0.0, 
+            max_value=1.0, 
+            value=st.session_state.get("source_confidence", 0.4), 
+            step=0.05,
+            key="source_confidence"
+        )
+        # Confidence langsung dipakai di fungsi helper
+        helper.play_stored_video(st.session_state.source_confidence, model)
 
 # Jika pilihan youtube
 elif selected_option == settings.YOUTUBE:
-    helper.play_youtube(confidence, model)
+    # Slider untuk mengatur confidence
+    confidence = st.slider(
+        "Atur Confidence Level (YouTube):", 
+        min_value=0.0, 
+        max_value=1.0, 
+        value=st.session_state.get("youtube_confidence", 0.4), 
+        step=0.05,
+        key="youtube_confidence"
+    )
+    # Confidence langsung dipakai di fungsi helper
+    helper.play_youtube(st.session_state.youtube_confidence, model)
 
 # Jika pilihan realtime / webcam
 elif selected_option == settings.WEBCAM:
-    helper.live(confidence, model)
+    # Slider untuk mengatur confidence
+    confidence = st.slider(
+        "Atur Confidence Level (Real-time):", 
+        min_value=0.0, 
+        max_value=1.0, 
+        value=st.session_state.get("webcam_confidence", 0.4), 
+        step=0.05,
+        key="webcam_confidence"
+    )
+    # Confidence langsung dipakai di fungsi helper
+    helper.live(st.session_state.webcam_confidence, model)

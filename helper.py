@@ -60,7 +60,7 @@ def play_youtube(conf, model):
 
 def play_webcam(conf, model):
     vid_cap = cv2.VideoCapture(settings.WEBCAM_PATH)
-    vid_cap.set(cv2.CAP_PROP_FPS, 30)  # Set FPS ke 30
+    vid_cap.set(cv2.CAP_PROP_FPS, 45)  # Set FPS ke 30
     vid_cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)  # Resolusi lebih rendah
     vid_cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
@@ -106,7 +106,7 @@ def live(conf, model):
         mode=WebRtcMode.SENDRECV,
         rtc_configuration=RTC_CONFIGURATION,
         media_stream_constraints={
-            "video": {"frameRate": {"ideal": 60, "max": 60}},  # Set FPS
+            "video": {"frameRate": {"ideal": 60, "max": 90}},  # Set FPS
             "audio": False
         },
         async_processing=True,
