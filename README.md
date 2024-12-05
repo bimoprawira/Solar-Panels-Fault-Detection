@@ -47,28 +47,32 @@ Any defect in the solar panels can lead to short circuits and fires. This system
 ### Sustainability (SDGs) Value🌏
 
 ![SDGs-Num7](https://github.com/user-attachments/assets/e5f5345b-fd5b-4738-968b-fff5e983b65b)
-![SDGs-Num9](https://github.com/user-attachments/assets/a9a56fa9-7663-495a-90d0-507cd0152c3b)
-![SDGs-Num11-2](https://github.com/user-attachments/assets/1ca23072-57b0-4e5e-8b39-76c77b4a92db)
-![SDGs-Num12](https://github.com/user-attachments/assets/aafea236-5a56-49c1-bdd3-0fc61db324e5)
-![SDGs-Num13](https://github.com/user-attachments/assets/da9445c3-f92d-46f5-aa45-c14db8260e0a)
 
-1.) SDGs Number 7 “<b>Affordable and Clean Energy</b>”
+1.) SDGs Number 7 “<b>Affordable and Clean Energy</b>”☀️
 
 --> The projects we build directly contribute to improving the efficiency of solar energy use. By detecting faults in solar panels in advance, the project helps ensure that solar panels operate optimally, thereby generating more and more efficient electrical energy. By increasing the efficiency of solar panels, the project can help reduce reliance on finite fossil energy sources and resulting greenhouse gas emissions. This is an important step in the transition to clean and sustainable energy.
 
-2.) SDGs Number 9 "<b>Industry, Innovation, and Infrastructure</b>"
+![SDGs-Num9](https://github.com/user-attachments/assets/a9a56fa9-7663-495a-90d0-507cd0152c3b)
+
+2.) SDGs Number 9 "<b>Industry, Innovation, and Infrastructure</b>"🏭
 
 --> The project we are developing contributes to innovation within the renewable energy industry by enhancing the efficiency of solar panels through AI-based anomaly detection. This technology can significantly improve the infrastructure supporting solar energy systems, ensuring that they are maintained optimally and reducing the risk of system failures. By proactively addressing potential issues such as dirt, physical damage, and debris, the project helps businesses optimize solar energy production, reduce maintenance costs, and prolong the lifespan of solar panels, thereby fostering a more sustainable and resilient energy infrastructure.
 
-3.) SDGs Number 11 “<b>Sustainable Cities and Communities</b>”
+![SDGs-Num11x](https://github.com/user-attachments/assets/f859d97c-b0a2-4030-9a08-17788099d56d)
+
+3.) SDGs Number 11 “<b>Sustainable Cities and Communities</b>”🌇
 
 --> The projects we build can support sustainable urban development by supporting the increased use of renewable energy in urban environments. Well-maintained solar panels can reduce the load on conventional power grids and contribute to better air quality in cities. By increasing the use of solar energy in urban areas, this project can help reduce air and noise pollution associated with conventional power plants. In addition, it can also contribute to cities' resilience to climate change.
 
-4.) SDGs Number 12 "<b>Responsible Consumption and Production</b>"
+![SDGs-Num12](https://github.com/user-attachments/assets/aafea236-5a56-49c1-bdd3-0fc61db324e5)
+
+4.) SDGs Number 12 "<b>Responsible Consumption and Production</b>"♻️
 
 --> This project promotes responsible consumption and production by ensuring that solar panels are utilized to their full potential without unnecessary waste. By detecting and addressing issues before they lead to serious damage, the project reduces the need for frequent repairs or replacements, minimizing resource consumption and waste. In doing so, it supports the circular economy model, where solar panels are maintained for longer periods, reducing environmental impact and contributing to more sustainable production processes. Businesses that adopt this technology can enhance their commitment to sustainability, improving their operational efficiency while minimizing their ecological footprint.
 
-5.) SDGs Number 13 “<b>Climate Action</b>"
+![SDGs-Num13](https://github.com/user-attachments/assets/da9445c3-f92d-46f5-aa45-c14db8260e0a)
+
+5.) SDGs Number 13 “<b>Climate Action</b>"🌱
 
 --> The projects we build directly contribute to climate change mitigation efforts. By increasing the efficiency of solar panels, the project helps reduce greenhouse gas emissions generated from conventional power plants. And, by detecting failures in solar panels earlier, the project can help ensure that investments in solar energy provide optimal returns in the long run. This is an important investment for a sustainable future.
 
