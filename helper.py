@@ -6,10 +6,14 @@ from pytube import YouTube
 from tempfile import NamedTemporaryFile
 
 from streamlit_webrtc import VideoTransformerBase, webrtc_streamer, WebRtcMode, VideoProcessorFactory
+from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
 
 import settings
 import turn
 
+RTC_CONFIGURATION = RTCConfiguration(
+    {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
+)
 
 def load_model(model_path):
     model = YOLO(model_path)
@@ -55,29 +59,23 @@ def play_youtube(conf, model):
 
 
 def play_webcam(conf, model):
-    
-    source_webcam = settings.WEBCAM_PATH
-    
-    if st.button('Deteksi Secara Langsung'):
-        try:
-            vid_cap = cv2.VideoCapture(source_webcam)
-            st_frame = st.empty()
-            stop_button = st.button('Berhenti')
-            while (vid_cap.isOpened() and not stop_button):
-                success, image = vid_cap.read()
-                if success:
-                    showDetectFrame(conf,
-                                    model,
-                                    st_frame,
-                                    image
-                                   )
-                else:
-                    vid_cap.release()
-                    break
-        except Exception as e:
-            st.error("Ada Kesalahan Saat Proses Deteksi: " + str(e))
-import av
+    vid_cap = cv2.VideoCapture(settings.WEBCAM_PATH)
+    vid_cap.set(cv2.CAP_PROP_FPS, 30)  # Set FPS ke 30
+    vid_cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)  # Resolusi lebih rendah
+    vid_cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
+    st_frame = st.empty()
+    stop_button = st.button("Stop")
+    while vid_cap.isOpened() and not stop_button:
+        ret, frame = vid_cap.read()
+        if not ret:
+            break
+        showDetectFrame(conf, model, st_frame, frame)
+    vid_cap.release()
+
+
+
+import av
 class VideoTransformer(VideoTransformerBase):
     def __init__(self, model, conf):
         self.model = model
@@ -85,22 +83,34 @@ class VideoTransformer(VideoTransformerBase):
 
     def transform(self, frame):
         img = frame.to_ndarray(format="bgr24")
-        res = self.model.predict(img, show=False, conf=self.conf)
-        res_plotted = res[0].plot()
-        return res_plotted
+        try:
+            res = self.model.predict(img, show=False, conf=self.conf)
+            res_plotted = res[0].plot()
+            return res_plotted
+        except Exception as e:
+            print("Error in transform:", e)
+            return img
+        
+    st.write("Webcam mode started.")
+
+def check_camera_source(source=0):
+    vid_cap = cv2.VideoCapture(source)
+    if not vid_cap.isOpened():
+        raise ValueError(f"Kamera tidak tersedia pada sumber {source}")
+    vid_cap.release()
+    check_camera_source(settings.WEBCAM_PATH)
 
 def live(conf, model):
     webrtc_ctx = webrtc_streamer(
         key="object-detection",
         mode=WebRtcMode.SENDRECV,
-        rtc_configuration={
-            "iceServers": turn.get_ice_servers(),
-            "iceTransportPolicy": "relay",
+        rtc_configuration=RTC_CONFIGURATION,
+        media_stream_constraints={
+            "video": {"frameRate": {"ideal": 60, "max": 60}},  # Set FPS
+            "audio": False
         },
-        video_transformer_factory=lambda: VideoTransformer(model, conf),
-        media_stream_constraints={"video": True, "audio": False},
         async_processing=True,
-        video_processor_factory=lambda: VideoProcessorFactory(fps=60)
+        video_processor_factory=lambda: VideoTransformer(model, conf),
     )
 
 def process_uploaded_video(conf, model):
