@@ -58,7 +58,7 @@ Any defect in the solar panels can lead to short circuits and fires. This system
 
 2.) SDGs Number 9 "<b>Industry, Innovation, and Infrastructure</b>"
 
---> 
+--> The project we are developing contributes to innovation within the renewable energy industry by enhancing the efficiency of solar panels through AI-based anomaly detection. This technology can significantly improve the infrastructure supporting solar energy systems, ensuring that they are maintained optimally and reducing the risk of system failures. By proactively addressing potential issues such as dirt, physical damage, and debris, the project helps businesses optimize solar energy production, reduce maintenance costs, and prolong the lifespan of solar panels, thereby fostering a more sustainable and resilient energy infrastructure.
 
 3.) SDGs Number 11 “<b>Sustainable Cities and Communities</b>”
 
@@ -66,7 +66,7 @@ Any defect in the solar panels can lead to short circuits and fires. This system
 
 4.) SDGs Number 12 "<b>Responsible Consumption and Production</b>"
 
---> 
+--> This project promotes responsible consumption and production by ensuring that solar panels are utilized to their full potential without unnecessary waste. By detecting and addressing issues before they lead to serious damage, the project reduces the need for frequent repairs or replacements, minimizing resource consumption and waste. In doing so, it supports the circular economy model, where solar panels are maintained for longer periods, reducing environmental impact and contributing to more sustainable production processes. Businesses that adopt this technology can enhance their commitment to sustainability, improving their operational efficiency while minimizing their ecological footprint.
 
 5.) SDGs Number 13 “<b>Climate Action</b>"
 
