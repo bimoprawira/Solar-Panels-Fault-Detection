@@ -135,23 +135,24 @@ Any defect in the solar panels can lead to short circuits and fires. This system
 | CUDA | 12.2 Version |
 
 ## Dataset
-“<b>Solar Panel Failures</b>” dataset is designed to utilize object detection techniques (computer vision). The dataset itself consists of preprocessed and annotated images (bounding box) with labels representing various types of solar panel damage (Defective, Non Defective, Dusty, Bird Drop, Physical Damage, & Snow). Where, the dataset will contain a collection of solar panel photos totaling 3650 images, with a distribution of 2585 images in the data train, 615 in the data validation, and 450 in the data test. The annotations itself total 20018 with an average of 5.5 annotations per image in each class. Details of the annotation distribution can be seen in the following figure: 
+“<b>Solar Panel Failures</b>” dataset is designed to utilize object detection techniques (computer vision). The dataset itself consists of preprocessed and annotated images (bounding box) with labels representing various types of solar panel damage (Defective, Non Defective, Dusty, Bird Drop, Physical Damage, & Snow). Where, the dataset will contain a collection of solar panel photos totaling 3.636 images, with a distribution of 2903 images in the data train, 402 in the data validation, and 331 in the data test. The annotations itself total 20018 with an average of 5.5 annotations per image in each class. Details of the annotation distribution can be seen in the following figure: 
 
 - <b>All Splits</b>
 
-![{6C542ADE-67EF-4A7A-89F3-0500CB9E169E}](https://github.com/user-attachments/assets/3a2d8680-ec8d-4633-8f2d-4d8eccfbd988)
+![Screenshot 2024-12-06 234100](https://github.com/user-attachments/assets/13dea1a7-8262-427a-823f-c39bd2c14275)
 
 - <b>Train Set</b>
 
-![{1BA51704-8E7A-4333-8B50-7FFB9C235145}](https://github.com/user-attachments/assets/5039f708-3ded-4eb8-8cfa-2d7e4ce9d01e)
+![Screenshot 2024-12-06 234107](https://github.com/user-attachments/assets/e53ba5d9-676f-4567-911f-78cec29a480f)
+
 
 - <b>Valid Set</b>
 
-![{420D2711-794B-4D1E-BEE1-2B58F262A5D0}](https://github.com/user-attachments/assets/60677340-76ba-4db1-856c-c434e2232aea)
+![Screenshot 2024-12-06 234114](https://github.com/user-attachments/assets/d716346a-144a-4363-a3f7-c4995a7a0942)
 
 - <b>Test Set</b>
 
-![{768316F7-C20A-4AD2-8D99-3F439968A537}](https://github.com/user-attachments/assets/a7d79684-4748-4b60-a7a4-50e4219bac29)
+![Screenshot 2024-12-06 234120](https://github.com/user-attachments/assets/dabf0a0e-ad76-40e1-94c7-aba1d1422679)
 
 📸Sample images from several existing classes: 
 
