@@ -282,13 +282,12 @@ Here is the BMC that we have designed based on the project that we built in such
 
 ### Short Video
 Provide a link to your short video, that should includes the project background and how it works.
-- Link: https://...
+- Link: https://youtu.be/vZlyn8Qw2o4
 
 ## References
 Provide all links that support this final project, i.e., papers, GitHub repositories, websites, etc.
-- Link: https://...
-- Link: https://...
-- Link: https://...
+- Link: https://www.ultralytics.com/
+- Link: https://roboflow.com/
 
 ## Additional Comments
 Provide your team's additional comments or final remarks for this project. For example,
