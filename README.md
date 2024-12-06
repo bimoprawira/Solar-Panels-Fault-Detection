@@ -193,7 +193,7 @@ The version of dataset that we provide here, is a process of all the refinements
 - Link Dataset V11: https://universe.roboflow.com/6rainstorm-vnew/solar-panel-faulty-dataset-final-trial/dataset/7 
 - Link Dataset V12: https://universe.roboflow.com/6rainstorm-vnew/solar-panel-faulty-dataset-final-trial/dataset/8 
 - Link Dataset V13: https://universe.roboflow.com/6rainstorm-vnew/solar-panel-faulty-dataset-final-trial/dataset/11 
-- Link Dataset V14: ...
+- Link Dataset Final : https://app.roboflow.com/6rainstorm-yqytq/6rainstorm-final-project/4](https://universe.roboflow.com/6rainstorm-yqytq/solar-panel-faulty-detection/dataset/4#
 
 ## Results
 ### Model Performance
@@ -215,6 +215,17 @@ These are some of the various experiences we have performed to evaluate and comp
 | YOLOv8s | V5 | 100 | 0.001 | 32 | Adam | 52.5% | 51% | 0.463 | 0.304 |
 | YOLOv8s | V5 | 150 | 0.001 | 32 | Adam | 54.6% | 51.4% | 0.48 | 0.302 |
 | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+
+The final result we get is :  
+| model | dataset_version | epoch | learning_rate | batch_size | optimizer | precision | recall | mAP50 | mAP50-95 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| YOLOv5 | Final | 175 | 0.001 | 32 | Adam | 83.6% | 70.1% | 0,753 | 0,582 |
+| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+
+Besides that, we also try custom hyperparameters :
+| model | dataset_version | epoch | learning_rate | batch_size | optimizer | precision | recall | mAP50 | mAP50-95 | learning_rate_factor | weight_decay | dropout | label_smoothing | momentum|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| YOLOv8s Custom Hyp | Final | 175 |  0.00001 | 32 | SGD | 74,5% | 66,% | 0.709 | 0.522 | 0.01 | 0.000001| 0.3 | 0.1 | 0.99|
 
 #### 2. Ablation Study
 Any improvements or modifications of your base model, should be summarized in this table. Feel free to adjust the columns in the table below.
@@ -295,4 +306,4 @@ If you find this project useful, we'd grateful if you cite this repository:
 For academic and non-commercial use only.
 
 ## Acknowledgement
-This project entitled <b>"YOUR PROJECT TITLE HERE"</b> is supported and funded by Startup Campus Indonesia and Indonesian Ministry of Education and Culture through the "**Kampus Merdeka: Magang dan Studi Independen Bersertifikasi (MSIB)**" program.
+This project entitled <b>"Automated Real-Time Monitoring and AI Fault Detection System for Solar Panels Using Advanced Image Detection"</b> is supported and funded by Startup Campus Indonesia and Indonesian Ministry of Education and Culture through the "**Kampus Merdeka: Magang dan Studi Independen Bersertifikasi (MSIB)**" program.
