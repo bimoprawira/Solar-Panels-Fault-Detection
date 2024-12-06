@@ -253,7 +253,9 @@ Show some implementations (demos) of this model. Show **at least 10 images** of 
 
 
 ### Deployment (Optional)
-Describe and show how you deploy this project (e.g., using Streamlit or Flask), if any.
+This project has been deployed using Streamlit to create an interactive website, and it is hosted locally through GitHub.
+- Deployment Platform: Streamlit
+Deployment link: https://urban-goggles-jjq69x5qxw662pxgp-8502.app.github.dev/
 
 
 ## Supporting Documents
