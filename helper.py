@@ -12,7 +12,6 @@ from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
 import settings
 import turn
 
-import yt_dlp as ydl
 import tempfile
 import torch
 import threading
