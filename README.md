@@ -93,7 +93,7 @@ Any defect in the solar panels can lead to short circuits and fires. This system
 |🧏🏻‍♀️Bimo Prawiradijaya | Startup Campus, AI Track | bimoprawiradj@gmail.com | [link](https://www.linkedin.com/in/bimopd/) | Team Member |
 |🧏🏻M. Bagas Abidawaqli | Startup Campus, AI Track | abidawaqli@gmail.com | [link](https://www.linkedin.com/in/m-bagas-abidawaqli-5985a320a/) | Team Member |
 |🧏🏻‍♀️Yoga Yudha Tama | Startup Campus, AI Track | yogayudhatama48@gmail.com | [link](https://www.linkedin.com/in/yoga-yudha-tama/) | Team Member |
-|🧏🏻Elvizto Juan Khresnanda | Startup Campus, AI Track | elvizto.juan.k@gmail.com | [link](www.linkedin.com/in/elviztookhresnanda) | Team Member |
+|🧏🏻Elvizto Juan Khresnanda | Startup Campus, AI Track | elvizto.juan.k@gmail.com | [link](https://www.linkedin.com/in/elviztookhresnanda/) | Team Member |
 |🧏🏻‍♀️Yudanis Dwi Satria | Startup Campus, AI Track | yudanis16@gmail.com | [link](https://www.linkedin.com/in/yudanis-dwi-satria-142a61229/) | Team Member |
 |🧏🏻‍♂️Laras Wati | Startup Campus, AI Track | xxshling27@gmail.com | [link](https://www.linkedin.com/in/laras-wati-934b58251/) | Team Member |
 |👑Nicholas Dominic | Startup Campus, AI Track | nic.dominic@icloud.com | [link](https://linkedin.com/in/nicholas-dominic) | Supervisor |
