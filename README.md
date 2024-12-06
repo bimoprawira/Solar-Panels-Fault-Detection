@@ -100,6 +100,7 @@ Any defect in the solar panels can lead to short circuits and fires. This system
 
 ## Setup
 ### Prerequisite Packages (Dependencies)
+<b>Model Requirements</b>:
 - nvidia-smi==535.104.05
 - os
 - IPython (display, Image)
@@ -109,8 +110,18 @@ Any defect in the solar panels can lead to short circuits and fires. This system
 - glob
 - random
 - time
-- ...
-- ...
+
+<b>Deployment (Streamlit) Requirements:</b>
+- ultralytics==8.2.103
+- streamlit==1.32.2
+- streamlit-webrtc==0.47.6
+- opencv-python==4.9.0.80
+- Pillow==10.2.0
+- pytube==15.0.0
+- torch==2.2.1
+- torchvision==0.17.1
+- twilio~=8.10.1
+- numpy==1.26.4
 
 ### Environment
 | | |
