@@ -135,7 +135,7 @@ Any defect in the solar panels can lead to short circuits and fires. This system
 | CUDA | 12.2 Version |
 
 ## Dataset
-“<b>Solar Panel Failures</b>” dataset is designed to utilize object detection techniques (computer vision). The dataset itself consists of preprocessed and annotated images (bounding box) with labels representing various types of solar panel damage (Defective, Non Defective, Dusty, Bird Drop, Physical Damage, & Snow). Where, the dataset will contain a collection of solar panel photos totaling 3.636 images, with a distribution of 2903 images in the data train, 402 in the data validation, and 331 in the data test. The annotations itself total 20018 with an average of 5.5 annotations per image in each class. Details of the annotation distribution can be seen in the following figure: 
+“<b>Solar Panel Failures</b>” dataset is designed to utilize object detection techniques (computer vision). The dataset itself consists of preprocessed and annotated images (bounding box) with labels representing various types of solar panel damage (Defective, Non Defective, Dusty, Bird Drop, Physical Damage, & Snow). Where, the dataset will contain a collection of solar panel photos totaling 3.636 images, with a distribution of 2903 images in the data train, 402 in the data validation, and 331 in the data test. The annotations itself total 13.252 with an average of 3.6 annotations per image in each class. Details of the annotation distribution can be seen in the following figure: 
 
 - <b>All Splits</b>
 
