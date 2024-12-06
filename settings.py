@@ -17,24 +17,20 @@ HOME = 'Homepage'
 IMAGE = 'Image Detection'
 VIDEO = 'Video Detection'
 WEBCAM = 'Real-Time Detection'
-YOUTUBE = 'YouTube'
 
-SOURCES_LIST = [HOME, IMAGE, VIDEO, YOUTUBE, WEBCAM]
+SOURCES_LIST = [HOME, IMAGE, VIDEO, WEBCAM]
 
 # Images config
 IMAGES_DIR = ROOT / 'images'
 DEFAULT_IMAGE = IMAGES_DIR / 'detect.jpeg'
 DEFAULT_DETECT_IMAGE = IMAGES_DIR / 'hasil_deteksi.jpg'
-IMAGE_HELP = IMAGES_DIR / 'brainstorm.png'
+IMAGE_HELP = IMAGES_DIR / 'Tim 6_logo.png'
 
 # Videos config
 VIDEO_DIR = ROOT / 'videos'
 VIDEOS_DICT = {
     'Video 1': VIDEO_DIR / 'video_1.mp4',
     'Video 2': VIDEO_DIR / 'video_2.mp4',
-    'Video 3': VIDEO_DIR / 'video_3.mp4',
-    'Video 4': VIDEO_DIR / 'video_4.mp4',
-    'Video 5': VIDEO_DIR / 'video_5.mp4',
 }
 
 # ML Model config

@@ -10,36 +10,6 @@ import streamlit as st
 import settings
 import helper
 
-# Setting page layout
-# st.set_page_config(
-#     page_title="Deteksi Objek | Yolov8",
-#     page_icon="🔍",
-# )
-
-# def set_background(image_path):
-#     """
-#     Fungsi untuk mengatur background dengan gambar lokal.
-#     :param image_path: Path ke gambar lokal
-#     """
-#     # Encode gambar sebagai Base64
-#     with open(image_path, "rb") as image_file:
-#         encoded_string = base64.b64encode(image_file.read()).decode()
-#     # Tambahkan ke CSS
-#     st.markdown(f"""
-#         <style>
-#         body {{
-#             background-image: url("data:image/jpeg;base64,{encoded_string}");
-#             background-size: cover;
-#             background-repeat: no-repeat;
-#             background-attachment: fixed;
-#             background-position: center;
-#             background-color: #f0f0f0; /* Warna fallback */
-#         }}
-#         </style>
-#         """, unsafe_allow_html=True)
-
-# # Set Background
-# set_background("assets/PanelBG-1.jpg")
 
 # settings
 model_type = 'Detection'
@@ -53,17 +23,81 @@ except Exception as ex:
     print(f"Unable to load model. Check the specified path: {model_path}")
     print(ex)
 
-# Main page heading
-st.markdown("<h1 style='text-align: center;'>☀️Solar Panel Fault Detection🛰️</h1>", unsafe_allow_html=True)
-
 # Pilihan deteksi
-selected_option = st.selectbox('Silahkan Pilih Mode Deteksi:', settings.SOURCES_LIST)
+selected_option = st.selectbox(' ', settings.SOURCES_LIST)
+
+# Main page heading with extra margin
+st.markdown("<h1 style='text-align: center;'>☀️Solar Panel Fault Detection🛰️</h1>", unsafe_allow_html=True)
+st.markdown("<br><br>", unsafe_allow_html=True)  # Adds extra space between selectbox and title
+
+# Sidebar About
+st.sidebar.markdown("# About Us")
+st.sidebar.image("images/brainstorm.png", use_column_width=True, width=400)  # Resize the image to be larger
+st.sidebar.divider()
+
+# Data untuk anggota tim
+team_members = [
+    {
+        "role": "(leader yang kerjaannya izin mulu)",
+        "name": "Jamilatul Muyasaroh",
+        "linkedin": "https://id.linkedin.com/in/jamilatul-muyasaroh-1071ba300",
+        "instagram": "https://www.instagram.com/miilaaaj",
+        "photo": "images/Jamilatul Muyasaroh_UNS.PNG"
+    },
+    {
+        "role": "(ngurus web)",
+        "name": "Elvizto Juan Khresnanda",
+        "linkedin": "www.linkedin.com/in/elviztookhresnanda",
+        "instagram": "https://www.instagram.com/juonelviztoo/",
+        "photo": "images/elvizto.jpg"
+    },
+    {
+        "role": "(ngurus web)",
+        "name": "Bimo Prawiradijaya",
+        "linkedin": "https://linkedin.com/in/bimopd",
+        "instagram": "https://www.instagram.com/bimoprawiradjaya",
+        "photo": "images/bimoprawira.jpg"
+    },
+    {
+        "role": "(ngurus web)",
+        "name": "M. Bagas Abidawaqli",
+        "linkedin": "https://www.linkedin.com/in/m-bagas-abidawaqli-5985a320a/",
+        "instagram": "https://www.instagram.com/mbadawaqli484",
+        "photo": "images/M.BagasAbidawaqli_UNS.png"
+    },
+    {
+        "role": "(ngurus web)",
+        "name": "Yoga Yudha Tama",
+        "linkedin": "https://www.linkedin.com/in/yoga-yudha-tama/",
+        "instagram": "https://www.instagram.com/yogaacor_/",
+        "photo": "images/Yoga Yudha Tama_UNNES.png"
+    },
+    {
+        "role": "(ngurus web)",
+        "name": "Yudanis Dwi Satria",
+        "linkedin": "https://www.linkedin.com/in/yudanis-dwi-satria-142a61229/",
+        "instagram": "https://www.instagram.com/danissaatria/",
+        "photo": "images/Yudanis.jpg"
+    },
+    {
+        "role": "(ngurus web)",
+        "name": "Laras Wati",
+        "linkedin": "https://www.linkedin.com/in/laras-wati-934b58251/",
+        "instagram": "https://www.instagram.com/laras444",
+        "photo": "images/Laras.jpg"
+    },
+]
+
+# Info Anggota
+for member in team_members:
+    st.sidebar.markdown(f"### {member['name']}")
+    st.sidebar.markdown(f"**{member['role']}**")
+    st.sidebar.markdown(f"[LinkedIn]({member['linkedin']})" "  " f"[Instagram]({member['instagram']})")
+    st.sidebar.image(member['photo'], use_column_width=True)
+    st.sidebar.divider()
 
 source_img = None
 
-# pilihan selectbox
-
-# jika yang dipilih image
 # Petunjuk
 if selected_option == settings.HOME:
     helper.helpFunction()
@@ -154,20 +188,6 @@ elif selected_option == settings.VIDEO:
         )
         # Confidence langsung dipakai di fungsi helper
         helper.play_stored_video(st.session_state.source_confidence, model)
-
-# Jika pilihan youtube
-elif selected_option == settings.YOUTUBE:
-    # Slider untuk mengatur confidence
-    confidence = st.slider(
-        "Atur Confidence Level (YouTube):", 
-        min_value=0.0, 
-        max_value=1.0, 
-        value=st.session_state.get("youtube_confidence", 0.4), 
-        step=0.05,
-        key="youtube_confidence"
-    )
-    # Confidence langsung dipakai di fungsi helper
-    helper.play_youtube(st.session_state.youtube_confidence, model)
 
 # Jika pilihan realtime / webcam
 elif selected_option == settings.WEBCAM:
