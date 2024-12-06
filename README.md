@@ -221,6 +221,7 @@ The final result we get is :
 | model | dataset_version | epoch | learning_rate | batch_size | optimizer | precision | recall | mAP50 | mAP50-95 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | YOLOv5 | Final | 175 | 0.001 | 32 | Adam | 83.6% | 70.1% | 0,753 | 0,582 |
+| YOLOv8 | Final | 100 | 0.001 | 32 | Adam | 82.6% | 71.1% | 0,764 | 0,608 |
 | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
 
 Besides that, we also try custom hyperparameters :
