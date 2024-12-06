@@ -224,7 +224,7 @@ The final result we get is :
 
 Besides that, we also try custom hyperparameters :
 | model | dataset_version | epoch | learning_rate | batch_size | optimizer | precision | recall | mAP50 | mAP50-95 | learning_rate_factor | weight_decay | dropout | label_smoothing | momentum|
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | YOLOv8s Custom Hyp | Final | 175 |  0.00001 | 32 | SGD | 74,5% | 66,% | 0.709 | 0.522 | 0.01 | 0.000001| 0.3 | 0.1 | 0.99|
 
 #### 2. Ablation Study
