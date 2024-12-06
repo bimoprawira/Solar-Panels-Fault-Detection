@@ -229,26 +229,13 @@ Besides that, we also try custom hyperparameters :
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | YOLOv8s Custom Hyp | Final | 175 |  0.00001 | 32 | SGD | 74,5% | 66,% | 0.709 | 0.522 | 0.01 | 0.000001| 0.3 | 0.1 | 0.99|
 
-#### 2. Ablation Study
-Any improvements or modifications of your base model, should be summarized in this table. Feel free to adjust the columns in the table below.
-
-| model | layer_A | layer_B | layer_C | ... | top1_acc | top5_acc |
-| --- | --- | --- | --- | --- | --- | --- |
-| vit_b_16 | Conv(3x3, 64) x2 | Conv(3x3, 512) x3 | Conv(1x1, 2048) x3 | ... | 77.43% | 80.08% |
-| vit_b_16 | Conv(3x3, 32) x3 | Conv(3x3, 128) x3 | Conv(1x1, 1028) x2 | ... | 72.11% | 76.84% |
-| ... | ... | ... | ... | ... | ... | ... |
-
 #### 3. Training/Validation Curve
 Insert an image regarding your training and evaluation performances (especially their losses). The aim is to assess whether your model is fit, overfit, or underfit.
 
-- <b>Confusion Matrix</b>
-
-![ConfusionMatrix-YOLOv8s-DatasaetV5-150EPOCH](https://github.com/user-attachments/assets/4e449602-4638-48da-a7f4-27e78204ea94)
-
 - <b>Metrics Graph</b>
 
-![Graph-YOLOv8s-DatasetV5-150EPOCH](https://github.com/user-attachments/assets/ddd61e61-653a-4189-8d9c-46056244e93d)
- 
+![{9EC29A84-C5B3-4AC5-82F7-AFA00DA4F68B}](https://github.com/user-attachments/assets/a213b85b-7fd8-4175-9ac8-69e2fa0b40d2)
+
 ### Testing
 Show some implementations (demos) of this model. Show **at least 10 images** of how your model performs on the testing data.
 
@@ -288,20 +275,6 @@ Provide a link to your short video, that should includes the project background 
 Provide all links that support this final project, i.e., papers, GitHub repositories, websites, etc.
 - Link: https://www.ultralytics.com/
 - Link: https://roboflow.com/
-
-## Additional Comments
-Provide your team's additional comments or final remarks for this project. For example,
-1. ...
-2. ...
-3. ...
-
-## How to Cite
-If you find this project useful, we'd grateful if you cite this repository:
-```
-@article{
-...
-}
-```
 
 ## License
 For academic and non-commercial use only.
