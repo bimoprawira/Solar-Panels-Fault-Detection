@@ -47,18 +47,32 @@ Any defect in the solar panels can lead to short circuits and fires. This system
 ### Sustainability (SDGs) Value🌏
 
 ![SDGs-Num7](https://github.com/user-attachments/assets/e5f5345b-fd5b-4738-968b-fff5e983b65b)
-![SDGs-Num11-2](https://github.com/user-attachments/assets/1ca23072-57b0-4e5e-8b39-76c77b4a92db)
-![SDGs-Num13](https://github.com/user-attachments/assets/da9445c3-f92d-46f5-aa45-c14db8260e0a)
 
-1.) SDGs Number 7 “<b>Affordable and Clean Energy</b>”
+1.) SDGs Number 7 “<b>Affordable and Clean Energy</b>”☀️
 
 --> The projects we build directly contribute to improving the efficiency of solar energy use. By detecting faults in solar panels in advance, the project helps ensure that solar panels operate optimally, thereby generating more and more efficient electrical energy. By increasing the efficiency of solar panels, the project can help reduce reliance on finite fossil energy sources and resulting greenhouse gas emissions. This is an important step in the transition to clean and sustainable energy.
 
-2.) SDGs Number 11 “<b>Sustainable Cities and Communities</b>”
+![SDGs-Num9](https://github.com/user-attachments/assets/a9a56fa9-7663-495a-90d0-507cd0152c3b)
+
+2.) SDGs Number 9 "<b>Industry, Innovation, and Infrastructure</b>"🏭
+
+--> The project we are developing contributes to innovation within the renewable energy industry by enhancing the efficiency of solar panels through AI-based anomaly detection. This technology can significantly improve the infrastructure supporting solar energy systems, ensuring that they are maintained optimally and reducing the risk of system failures. By proactively addressing potential issues such as dirt, physical damage, and debris, the project helps businesses optimize solar energy production, reduce maintenance costs, and prolong the lifespan of solar panels, thereby fostering a more sustainable and resilient energy infrastructure.
+
+![SDGs-Num11x](https://github.com/user-attachments/assets/f859d97c-b0a2-4030-9a08-17788099d56d)
+
+3.) SDGs Number 11 “<b>Sustainable Cities and Communities</b>”🌇
 
 --> The projects we build can support sustainable urban development by supporting the increased use of renewable energy in urban environments. Well-maintained solar panels can reduce the load on conventional power grids and contribute to better air quality in cities. By increasing the use of solar energy in urban areas, this project can help reduce air and noise pollution associated with conventional power plants. In addition, it can also contribute to cities' resilience to climate change.
 
-3.) SDGs Number 13 “<b>Climate Action</b>"
+![SDGs-Num12](https://github.com/user-attachments/assets/aafea236-5a56-49c1-bdd3-0fc61db324e5)
+
+4.) SDGs Number 12 "<b>Responsible Consumption and Production</b>"♻️
+
+--> This project promotes responsible consumption and production by ensuring that solar panels are utilized to their full potential without unnecessary waste. By detecting and addressing issues before they lead to serious damage, the project reduces the need for frequent repairs or replacements, minimizing resource consumption and waste. In doing so, it supports the circular economy model, where solar panels are maintained for longer periods, reducing environmental impact and contributing to more sustainable production processes. Businesses that adopt this technology can enhance their commitment to sustainability, improving their operational efficiency while minimizing their ecological footprint.
+
+![SDGs-Num13](https://github.com/user-attachments/assets/da9445c3-f92d-46f5-aa45-c14db8260e0a)
+
+5.) SDGs Number 13 “<b>Climate Action</b>"🌱
 
 --> The projects we build directly contribute to climate change mitigation efforts. By increasing the efficiency of solar panels, the project helps reduce greenhouse gas emissions generated from conventional power plants. And, by detecting failures in solar panels earlier, the project can help ensure that investments in solar energy provide optimal returns in the long run. This is an important investment for a sustainable future.
 
@@ -79,30 +93,46 @@ Any defect in the solar panels can lead to short circuits and fires. This system
 |🧏🏻‍♀️Bimo Prawiradijaya | Startup Campus, AI Track | bimoprawiradj@gmail.com | [link](https://www.linkedin.com/in/bimopd/) | Team Member |
 |🧏🏻M. Bagas Abidawaqli | Startup Campus, AI Track | abidawaqli@gmail.com | [link](https://www.linkedin.com/in/m-bagas-abidawaqli-5985a320a/) | Team Member |
 |🧏🏻‍♀️Yoga Yudha Tama | Startup Campus, AI Track | yogayudhatama48@gmail.com | [link](https://www.linkedin.com/in/yoga-yudha-tama/) | Team Member |
-|🧏🏻Elvizto Juan Khresnanda | Startup Campus, AI Track | elvizto.juan.k@gmail.com | [link](www.linkedin.com/in/elviztookhresnanda) | Team Member |
+|🧏🏻Elvizto Juan Khresnanda | Startup Campus, AI Track | elvizto.juan.k@gmail.com | [link](https://www.linkedin.com/in/elviztookhresnanda/) | Team Member |
 |🧏🏻‍♀️Yudanis Dwi Satria | Startup Campus, AI Track | yudanis16@gmail.com | [link](https://www.linkedin.com/in/yudanis-dwi-satria-142a61229/) | Team Member |
 |🧏🏻‍♂️Laras Wati | Startup Campus, AI Track | xxshling27@gmail.com | [link](https://www.linkedin.com/in/laras-wati-934b58251/) | Team Member |
 |👑Nicholas Dominic | Startup Campus, AI Track | nic.dominic@icloud.com | [link](https://linkedin.com/in/nicholas-dominic) | Supervisor |
 
 ## Setup
 ### Prerequisite Packages (Dependencies)
-- nvidia-smi
+<b>Model Requirements</b>:
+- nvidia-smi==535.104.05
 - os
-- IPython
-- ultralytics==8.2.103
+- IPython (display, Image)
+- ultralytics==8.2.103 (YOLO)
+- Python-3.10.12
 - roboflow
-- ...
-- ...
+- glob
+- random
+- time
+
+<b>Deployment (Streamlit) Requirements:</b>
+- ultralytics==8.2.103
+- streamlit==1.32.2
+- streamlit-webrtc==0.47.6
+- opencv-python==4.9.0.80
+- Pillow==10.2.0
+- pytube==15.0.0
+- torch==2.2.1
+- torchvision==0.17.1
+- twilio~=8.10.1
+- numpy==1.26.4
 
 ### Environment
 | | |
 | --- | --- |
 | CPU | AMD Ryzen 7 5800H 8-core CPU |
-| GPU | Nvidia A100 (x1) |
+| GPU | Nvidia A100-SXM4-40GB |
 | ROM | 235.7 TB SSD |
 | RAM Sistem | 83.5 GB |
 | RAM GPU | 40 GB |
-| OS | Windows 11 Version 23H2 x64-based|
+| OS | Windows 11 Version 23H2 x64-based |
+| CUDA | 12.2 Version |
 
 ## Dataset
 “<b>Solar Panel Failures</b>” dataset is designed to utilize object detection techniques (computer vision). The dataset itself consists of preprocessed and annotated images (bounding box) with labels representing various types of solar panel damage (Defective, Non Defective, Dusty, Bird Drop, Physical Damage, & Snow). Where, the dataset will contain a collection of solar panel photos totaling 3650 images, with a distribution of 2585 images in the data train, 615 in the data validation, and 450 in the data test. The annotations itself total 20018 with an average of 5.5 annotations per image in each class. Details of the annotation distribution can be seen in the following figure: 
@@ -155,23 +185,24 @@ The version of dataset that we provide here, is a process of all the refinements
 - Link Dataset V3: https://universe.roboflow.com/6rianstorm/solar-panel-dataset-augmentation/dataset/4 
 - Link Dataset V4: https://universe.roboflow.com/6rianstorm/solar-panel-fault-dataset-new/dataset/1 
 - Link Dataset V5: https://universe.roboflow.com/6rianstorm/solar-panel-fault-dataset-new/dataset/2
-- Link Dataset V6: ...
+- Link Dataset V6: https://universe.roboflow.com/6rainstorm-wapqu/solar-panel-faulty-dataset-final/dataset/1
+- Link Dataset V7: https://universe.roboflow.com/6rainstorm-wapqu/solar-panel-faulty-dataset-final/dataset/2
+- Link Dataset V8: https://universe.roboflow.com/6rainstorm-wapqu/solar-panel-faulty-dataset-final/dataset/4
+- Link Dataset V9: https://universe.roboflow.com/6rainstorm-vnew/solar-panel-faulty-dataset-final-trial/dataset/1 
+- Link Dataset V10: https://universe.roboflow.com/6rainstorm-vnew/solar-panel-faulty-dataset-final-trial/dataset/2 
+- Link Dataset V11: https://universe.roboflow.com/6rainstorm-vnew/solar-panel-faulty-dataset-final-trial/dataset/7 
+- Link Dataset V12: https://universe.roboflow.com/6rainstorm-vnew/solar-panel-faulty-dataset-final-trial/dataset/8 
+- Link Dataset V13: https://universe.roboflow.com/6rainstorm-vnew/solar-panel-faulty-dataset-final-trial/dataset/11 
+- Link Dataset V14: ...
 
 ## Results
 ### Model Performance
 Describe all results found in your final project experiments, including hyperparameters tuning and architecture modification performances. Put it into table format. Please show pictures (of model accuracy, loss, etc.) for more clarity.
 
-#### 1. Metrics
-Inform your model validation performances, as follows:
-- For classification tasks, use **Precision and Recall**.
-- For object detection tasks, use **Precision and Recall**. Additionaly, you may also use **Intersection over Union (IoU)**.
-- For image retrieval tasks, use **Precision and Recall**.
-- For optical character recognition (OCR) tasks, use **Word Error Rate (WER) and Character Error Rate (CER)**.
-- For adversarial-based generative tasks, use **Peak Signal-to-Noise Ratio (PNSR)**. Additionally, for specific GAN tasks,
-  - For single-image super resolution (SISR) tasks, use **Structural Similarity Index Measure (SSIM)**.
-  - For conditional image-to-image translation tasks (e.g., Pix2Pix), use **Inception Score**.
+We are presenting in this section the results of our final project evaluation of the model through the metrics (Precision, Recall, & mAP) as well as the training/validation graphs. The experimental results are summarized in the following tables along with visualizations of the Confusion Matrix and Metrics Graph to provide a more in-depth depiction of the model development.
 
-Feel free to adjust the columns in the table below.
+#### 1. Metrics
+These are some of the various experiences we have performed to evaluate and compare the performance of different models or datasets in order to improve the on-paper metrics (precision, recall, & mAP (Intersection over Union)) and the performance of the models in detecting faults.
 
 | model | dataset_version | epoch | learning_rate | batch_size | optimizer | precision | recall | mAP50 | mAP50-95 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -221,16 +252,18 @@ Show some implementations (demos) of this model. Show **at least 10 images** of 
 ![Test3](https://github.com/user-attachments/assets/70befc49-a58c-411e-a0c6-0afcf1aceb8d)
 
 
-
 ### Deployment (Optional)
 Describe and show how you deploy this project (e.g., using Streamlit or Flask), if any.
 
+
 ## Supporting Documents
 ### Presentation Deck
-- Link: https://...
+- Link: https://www.canva.com/design/DAGYAoRD7ck/lDKTx4VDlzsrki_qBwjoeg/edit?utm_content=DAGYAoRD7ck&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton 
 
 ### Business Model Canvas
-Provide a screenshot of your Business Model Canvas (BMC). Give some explanations, if necessary.
+Here is the BMC that we have designed based on the project that we built in such a way:
+
+![Business Model Canvas Brainstorm](https://github.com/user-attachments/assets/c34a4ac9-3e80-48b2-8744-0fb2847d5026)
 
 ### Short Video
 Provide a link to your short video, that should includes the project background and how it works.
