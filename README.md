@@ -135,23 +135,24 @@ Any defect in the solar panels can lead to short circuits and fires. This system
 | CUDA | 12.2 Version |
 
 ## Dataset
-“<b>Solar Panel Failures</b>” dataset is designed to utilize object detection techniques (computer vision). The dataset itself consists of preprocessed and annotated images (bounding box) with labels representing various types of solar panel damage (Defective, Non Defective, Dusty, Bird Drop, Physical Damage, & Snow). Where, the dataset will contain a collection of solar panel photos totaling 3650 images, with a distribution of 2585 images in the data train, 615 in the data validation, and 450 in the data test. The annotations itself total 20018 with an average of 5.5 annotations per image in each class. Details of the annotation distribution can be seen in the following figure: 
+“<b>Solar Panel Failures</b>” dataset is designed to utilize object detection techniques (computer vision). The dataset itself consists of preprocessed and annotated images (bounding box) with labels representing various types of solar panel damage (Defective, Non Defective, Dusty, Bird Drop, Physical Damage, & Snow). Where, the dataset will contain a collection of solar panel photos totaling 3.636 images, with a distribution of 2903 images in the data train, 402 in the data validation, and 331 in the data test. The annotations itself total 13.252 with an average of 3.6 annotations per image in each class. Details of the annotation distribution can be seen in the following figure: 
 
 - <b>All Splits</b>
 
-![{6C542ADE-67EF-4A7A-89F3-0500CB9E169E}](https://github.com/user-attachments/assets/3a2d8680-ec8d-4633-8f2d-4d8eccfbd988)
+![Screenshot 2024-12-06 234100](https://github.com/user-attachments/assets/13dea1a7-8262-427a-823f-c39bd2c14275)
 
 - <b>Train Set</b>
 
-![{1BA51704-8E7A-4333-8B50-7FFB9C235145}](https://github.com/user-attachments/assets/5039f708-3ded-4eb8-8cfa-2d7e4ce9d01e)
+![Screenshot 2024-12-06 234107](https://github.com/user-attachments/assets/e53ba5d9-676f-4567-911f-78cec29a480f)
+
 
 - <b>Valid Set</b>
 
-![{420D2711-794B-4D1E-BEE1-2B58F262A5D0}](https://github.com/user-attachments/assets/60677340-76ba-4db1-856c-c434e2232aea)
+![Screenshot 2024-12-06 234114](https://github.com/user-attachments/assets/d716346a-144a-4363-a3f7-c4995a7a0942)
 
 - <b>Test Set</b>
 
-![{768316F7-C20A-4AD2-8D99-3F439968A537}](https://github.com/user-attachments/assets/a7d79684-4748-4b60-a7a4-50e4219bac29)
+![Screenshot 2024-12-06 234120](https://github.com/user-attachments/assets/dabf0a0e-ad76-40e1-94c7-aba1d1422679)
 
 📸Sample images from several existing classes: 
 
@@ -193,11 +194,11 @@ The version of dataset that we provide here, is a process of all the refinements
 - Link Dataset V11: https://universe.roboflow.com/6rainstorm-vnew/solar-panel-faulty-dataset-final-trial/dataset/7 
 - Link Dataset V12: https://universe.roboflow.com/6rainstorm-vnew/solar-panel-faulty-dataset-final-trial/dataset/8 
 - Link Dataset V13: https://universe.roboflow.com/6rainstorm-vnew/solar-panel-faulty-dataset-final-trial/dataset/11 
-- Link Dataset V14: ...
+- Link Dataset V14: https://universe.roboflow.com/6rainstorm-yqytq/solar-panel-faulty-detection/dataset/4#
+- Link Dataset Final: https://universe.roboflow.com/6rainstorm-data-train/solar-panel-faulty-od-final/dataset/5
 
 ## Results
 ### Model Performance
-Describe all results found in your final project experiments, including hyperparameters tuning and architecture modification performances. Put it into table format. Please show pictures (of model accuracy, loss, etc.) for more clarity.
 
 We are presenting in this section the results of our final project evaluation of the model through the metrics (Precision, Recall, & mAP) as well as the training/validation graphs. The experimental results are summarized in the following tables along with visualizations of the Confusion Matrix and Metrics Graph to provide a more in-depth depiction of the model development.
 
@@ -216,26 +217,27 @@ These are some of the various experiences we have performed to evaluate and comp
 | YOLOv8s | V5 | 150 | 0.001 | 32 | Adam | 54.6% | 51.4% | 0.48 | 0.302 |
 | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
 
-#### 2. Ablation Study
-Any improvements or modifications of your base model, should be summarized in this table. Feel free to adjust the columns in the table below.
+The final result we get is :  
+| model | dataset_version | epoch | learning_rate | batch_size | optimizer | precision | recall | mAP50 | mAP50-95 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| YOLOv8 | Final | 200 | 0.001 | 16 | AdamW | 81.9% | 72.1% | 0,751 | 0,622 |
 
-| model | layer_A | layer_B | layer_C | ... | top1_acc | top5_acc |
-| --- | --- | --- | --- | --- | --- | --- |
-| vit_b_16 | Conv(3x3, 64) x2 | Conv(3x3, 512) x3 | Conv(1x1, 2048) x3 | ... | 77.43% | 80.08% |
-| vit_b_16 | Conv(3x3, 32) x3 | Conv(3x3, 128) x3 | Conv(1x1, 1028) x2 | ... | 72.11% | 76.84% |
-| ... | ... | ... | ... | ... | ... | ... |
+Besides that, we also try custom hyperparameters :
+| model | dataset_version | epoch | learning_rate | batch_size | optimizer | precision | recall | mAP50 | mAP50-95 | learning_rate_factor | weight_decay | dropout | label_smoothing | momentum|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| YOLOv8s Custom Hyp | Final | 175 |  0.00001 | 32 | SGD | 74,5% | 66,% | 0.709 | 0.522 | 0.01 | 0.000001| 0.3 | 0.1 | 0.99|
 
 #### 3. Training/Validation Curve
-Insert an image regarding your training and evaluation performances (especially their losses). The aim is to assess whether your model is fit, overfit, or underfit.
+The following are the visualization results of the confusion matrix and training graphs metrics that are obtained based on the training of the YOLOv8s model using the final dataset.
 
 - <b>Confusion Matrix</b>
 
-![ConfusionMatrix-YOLOv8s-DatasaetV5-150EPOCH](https://github.com/user-attachments/assets/4e449602-4638-48da-a7f4-27e78204ea94)
+![ConfusionMatrix-DatasetV15](https://github.com/user-attachments/assets/8f14d17a-b848-4332-9463-1950f45c19a4)
 
 - <b>Metrics Graph</b>
 
-![Graph-YOLOv8s-DatasetV5-150EPOCH](https://github.com/user-attachments/assets/ddd61e61-653a-4189-8d9c-46056244e93d)
- 
+![TrainingGraph-DatasetV15](https://github.com/user-attachments/assets/f03388dc-2ba5-48dc-8db1-0d6b1f43b884)
+
 ### Testing
 Show some implementations (demos) of this model. Show **at least 10 images** of how your model performs on the testing data.
 
@@ -253,7 +255,9 @@ Show some implementations (demos) of this model. Show **at least 10 images** of 
 
 
 ### Deployment (Optional)
-Describe and show how you deploy this project (e.g., using Streamlit or Flask), if any.
+This project has been deployed using Streamlit to create an interactive website, and it is hosted locally through GitHub.
+- Deployment Platform: Streamlit
+Deployment link: https://urban-goggles-jjq69x5qxw662pxgp-8502.app.github.dev/
 
 
 ## Supporting Documents
@@ -267,30 +271,15 @@ Here is the BMC that we have designed based on the project that we built in such
 
 ### Short Video
 Provide a link to your short video, that should includes the project background and how it works.
-- Link: https://...
+- Link: https://youtu.be/vZlyn8Qw2o4
 
 ## References
 Provide all links that support this final project, i.e., papers, GitHub repositories, websites, etc.
-- Link: https://...
-- Link: https://...
-- Link: https://...
-
-## Additional Comments
-Provide your team's additional comments or final remarks for this project. For example,
-1. ...
-2. ...
-3. ...
-
-## How to Cite
-If you find this project useful, we'd grateful if you cite this repository:
-```
-@article{
-...
-}
-```
+- Link: https://www.ultralytics.com/
+- Link: https://roboflow.com/
 
 ## License
 For academic and non-commercial use only.
 
 ## Acknowledgement
-This project entitled <b>"YOUR PROJECT TITLE HERE"</b> is supported and funded by Startup Campus Indonesia and Indonesian Ministry of Education and Culture through the "**Kampus Merdeka: Magang dan Studi Independen Bersertifikasi (MSIB)**" program.
+This project entitled <b>"Automated Real-Time Monitoring and AI Fault Detection System for Solar Panels Using Advanced Image Detection"</b> is supported and funded by Startup Campus Indonesia and Indonesian Ministry of Education and Culture through the "**Kampus Merdeka: Magang dan Studi Independen Bersertifikasi (MSIB)**" program.
