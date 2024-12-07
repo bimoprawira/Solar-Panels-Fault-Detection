@@ -24,7 +24,7 @@ except Exception as ex:
     print(ex)
 
 # Pilihan deteksi
-selected_option = st.selectbox(' ', settings.SOURCES_LIST)
+selected_option = st.sidebar.selectbox('', settings.SOURCES_LIST)
 
 # Main page heading with extra margin
 st.markdown("<h1 style='text-align: center;'>☀️Solar Panel Fault Detection🛰️</h1>", unsafe_allow_html=True)
@@ -38,49 +38,49 @@ st.sidebar.divider()
 # Data untuk anggota tim
 team_members = [
     {
-        "role": "(leader yang kerjaannya izin mulu)",
+        "role": "Team Leader",
         "name": "Jamilatul Muyasaroh",
         "linkedin": "https://id.linkedin.com/in/jamilatul-muyasaroh-1071ba300",
         "instagram": "https://www.instagram.com/miilaaaj",
         "photo": "images/Jamilatul Muyasaroh_UNS.PNG"
     },
     {
-        "role": "(ngurus web)",
+        "role": "Team Member",
         "name": "Elvizto Juan Khresnanda",
         "linkedin": "www.linkedin.com/in/elviztookhresnanda",
         "instagram": "https://www.instagram.com/juonelviztoo/",
         "photo": "images/elvizto.jpg"
     },
     {
-        "role": "(ngurus web)",
+        "role": "Team Member",
         "name": "Bimo Prawiradijaya",
         "linkedin": "https://linkedin.com/in/bimopd",
         "instagram": "https://www.instagram.com/bimoprawiradjaya",
         "photo": "images/bimoprawira.jpg"
     },
     {
-        "role": "(ngurus web)",
+        "role": "Team Member",
         "name": "M. Bagas Abidawaqli",
         "linkedin": "https://www.linkedin.com/in/m-bagas-abidawaqli-5985a320a/",
         "instagram": "https://www.instagram.com/mbadawaqli484",
         "photo": "images/M.BagasAbidawaqli_UNS.png"
     },
     {
-        "role": "(ngurus web)",
+        "role": "Team Member",
         "name": "Yoga Yudha Tama",
         "linkedin": "https://www.linkedin.com/in/yoga-yudha-tama/",
         "instagram": "https://www.instagram.com/yogaacor_/",
         "photo": "images/Yoga Yudha Tama_UNNES.png"
     },
     {
-        "role": "(ngurus web)",
+        "role": "Team Member",
         "name": "Yudanis Dwi Satria",
         "linkedin": "https://www.linkedin.com/in/yudanis-dwi-satria-142a61229/",
         "instagram": "https://www.instagram.com/danissaatria/",
         "photo": "images/Yudanis.jpg"
     },
     {
-        "role": "(ngurus web)",
+        "role": "Team Member",
         "name": "Laras Wati",
         "linkedin": "https://www.linkedin.com/in/laras-wati-934b58251/",
         "instagram": "https://www.instagram.com/laras444",

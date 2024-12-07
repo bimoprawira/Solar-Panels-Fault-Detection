@@ -30,7 +30,8 @@ IMAGE_HELP = IMAGES_DIR / 'Tim 6_logo.png'
 VIDEO_DIR = ROOT / 'videos'
 VIDEOS_DICT = {
     'Video 1': VIDEO_DIR / 'video_1.mp4',
-    'Video 2': VIDEO_DIR / 'video_2.mp4',
+    'Video 2': VIDEO_DIR / 'video_2.mov',
+    'Video 3': VIDEO_DIR / 'video_3.mp4',
 }
 
 # ML Model config
@@ -47,9 +48,10 @@ WEBRTC_CLIENT_SETTINGS = ClientSettings(
     )
 # List clasname
 CLASS_NAME = {
-    0: "Defective", 
-    1: "Dirty", 
-    2: "Non Defective", 
-    3: "Physical Damage", 
-    4: "Snow"
+    0: "Bird Drop", 
+    1: "Defective",
+    2: "Dust", 
+    3: "Non Defective",
+    4: "Physical Damage", 
+    5: "Snow"
             }

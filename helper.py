@@ -2,19 +2,11 @@ from ultralytics import YOLO
 import time
 import streamlit as st
 import cv2
-import requests
-from pytube import YouTube
 from tempfile import NamedTemporaryFile
-
 from streamlit_webrtc import VideoTransformerBase, webrtc_streamer, WebRtcMode, VideoProcessorFactory
 from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
-
 import settings
-import turn
-
-import tempfile
 import torch
-import threading
 import time
 
 RTC_CONFIGURATION = RTCConfiguration(
@@ -35,51 +27,6 @@ def showDetectFrame(conf, model, st_frame, image, is_display_tracking=None, trac
     res = model.predict(small_image, conf=conf)
     res_plotted = res[0].plot()
     st_frame.image(res_plotted, caption='Detected Video', channels="BGR")
-
-
-# def play_youtube(conf, model):
-#     source_youtube = st.text_input("Silahkan Masukkan Link YouTube")
-    
-#     if source_youtube:
-#         if st.button('Deteksi'):
-#             try:
-#                 # Path ke file cookies yang diekspor dari browser
-#                 cookies_path = "path/to/your/cookies.txt"  # Sesuaikan dengan path cookies Anda
-
-#                 # Set up options for yt-dlp to extract the best quality video stream
-#                 ydl_opts = {
-#                     'format': 'best[ext=mp4]',
-#                     'noplaylist': True,  # Ignore playlists
-#                     'outtmpl': tempfile.mktemp(suffix='.mp4'),  # Temporary file output
-#                     'cookies': cookies_path,  # Menambahkan opsi cookies
-#                 }
-
-#                 with ydl.YoutubeDL(ydl_opts) as ydl_instance:
-#                     info_dict = ydl_instance.extract_info(source_youtube, download=False)
-#                     video_url = info_dict['url']
-
-#                     # Unduh video dan simpan sementara
-#                     temp_video = tempfile.NamedTemporaryFile(delete=False, suffix='.mp4')
-#                     temp_video.close()
-
-#                     # Mengunduh file video
-#                     ydl_instance.download([source_youtube])
-
-#                     # Baca video menggunakan OpenCV
-#                     vid_cap = cv2.VideoCapture(temp_video.name)
-#                     st_frame = st.empty()
-
-#                     while vid_cap.isOpened():
-#                         success, image = vid_cap.read()
-#                         if success:
-#                             # Deteksi objek di setiap frame
-#                             showDetectFrame(conf, model, st_frame, image)
-#                         else:
-#                             vid_cap.release()
-#                             break
-
-#             except Exception as e:
-#                 st.error(f"Terjadi kesalahan saat memproses video: {str(e)}")
 
 
 def play_webcam(conf, model):
@@ -240,7 +187,7 @@ def helpFunction():
 
     # Project Title and Description below the image
     html_temp_about1 = """
-                <div style="padding:50px; text-align:center;">
+                <div style="padding:30px; text-align:center; margin: auto;">
                     <h2>
                         Automated Real-Time Monitoring and AI Fault Detection System for Solar Panels Using Advanced Image Detection
                     </h2>
@@ -253,7 +200,7 @@ def helpFunction():
 
     # Project Description
     html_temp4 = """
-                <div style="padding:10px; text-align:center;">
+                <div style="padding:10px; text-align:justify;">
                     <h3>Project Description</h3>
                     This project aims to detect faulty solar panels caused by factors like physical damage, dust, animal droppings, or snow coverage. 
                     It distinguishes defective panels from those in good condition to prevent further deterioration and ensure timely maintenance. 
