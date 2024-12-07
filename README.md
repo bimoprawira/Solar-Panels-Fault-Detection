@@ -228,11 +228,15 @@ Besides that, we also try custom hyperparameters :
 | YOLOv8s Custom Hyp | Final | 175 |  0.00001 | 32 | SGD | 74,5% | 66,% | 0.709 | 0.522 | 0.01 | 0.000001| 0.3 | 0.1 | 0.99|
 
 #### 3. Training/Validation Curve
-Insert an image regarding your training and evaluation performances (especially their losses). The aim is to assess whether your model is fit, overfit, or underfit.
+The following are the visualization results of the confusion matrix and training graphs metrics that are obtained based on the training of the YOLOv8s model using the final dataset.
+
+- <b>Confusion Matrix</b>
+
+![ConfusionMatrix-DatasetV15](https://github.com/user-attachments/assets/8f14d17a-b848-4332-9463-1950f45c19a4)
 
 - <b>Metrics Graph</b>
 
-![{9EC29A84-C5B3-4AC5-82F7-AFA00DA4F68B}](https://github.com/user-attachments/assets/a213b85b-7fd8-4175-9ac8-69e2fa0b40d2)
+![TrainingGraph-DatasetV15](https://github.com/user-attachments/assets/f03388dc-2ba5-48dc-8db1-0d6b1f43b884)
 
 ### Testing
 Show some implementations (demos) of this model. Show **at least 10 images** of how your model performs on the testing data.
