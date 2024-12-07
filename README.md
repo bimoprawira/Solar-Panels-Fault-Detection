@@ -194,11 +194,11 @@ The version of dataset that we provide here, is a process of all the refinements
 - Link Dataset V11: https://universe.roboflow.com/6rainstorm-vnew/solar-panel-faulty-dataset-final-trial/dataset/7 
 - Link Dataset V12: https://universe.roboflow.com/6rainstorm-vnew/solar-panel-faulty-dataset-final-trial/dataset/8 
 - Link Dataset V13: https://universe.roboflow.com/6rainstorm-vnew/solar-panel-faulty-dataset-final-trial/dataset/11 
-- Link Dataset Final : https://universe.roboflow.com/6rainstorm-yqytq/solar-panel-faulty-detection/dataset/4#
+- Link Dataset V14: https://universe.roboflow.com/6rainstorm-yqytq/solar-panel-faulty-detection/dataset/4#
+- Link Dataset Final: https://universe.roboflow.com/6rainstorm-data-train/solar-panel-faulty-od-final/dataset/5
 
 ## Results
 ### Model Performance
-Describe all results found in your final project experiments, including hyperparameters tuning and architecture modification performances. Put it into table format. Please show pictures (of model accuracy, loss, etc.) for more clarity.
 
 We are presenting in this section the results of our final project evaluation of the model through the metrics (Precision, Recall, & mAP) as well as the training/validation graphs. The experimental results are summarized in the following tables along with visualizations of the Confusion Matrix and Metrics Graph to provide a more in-depth depiction of the model development.
 
@@ -220,9 +220,7 @@ These are some of the various experiences we have performed to evaluate and comp
 The final result we get is :  
 | model | dataset_version | epoch | learning_rate | batch_size | optimizer | precision | recall | mAP50 | mAP50-95 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| YOLOv5 | Final | 175 | 0.001 | 32 | Adam | 83.6% | 70.1% | 0,753 | 0,582 |
-| YOLOv8 | Final | 100 | 0.001 | 32 | Adam | 82.6% | 71.1% | 0,764 | 0,608 |
-| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+| YOLOv8 | Final | 200 | 0.001 | 16 | AdamW | 81.9% | 72.1% | 0,751 | 0,622 |
 
 Besides that, we also try custom hyperparameters :
 | model | dataset_version | epoch | learning_rate | batch_size | optimizer | precision | recall | mAP50 | mAP50-95 | learning_rate_factor | weight_decay | dropout | label_smoothing | momentum|
