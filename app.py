@@ -34,6 +34,20 @@ st.markdown("<br><br>", unsafe_allow_html=True)  # Adds extra space between sele
 # Sidebar About
 st.sidebar.markdown("# About Us")
 st.sidebar.image("images/brainstorm.png", use_container_width=True, width=400)  # Resize the image to be larger
+# Tambahkan tautan gambar YouTube dan GitHub di sidebar
+st.sidebar.markdown(
+    """
+    <div style="text-align: center;">
+        <a href="https://youtu.be/vZlyn8Qw2o4?si=3lupeZHI5D37prC5" target="_blank">
+            <img src="https://badges.aleen42.com/src/youtube.svg" alt="YouTube">
+        </a>
+        <a href="https://github.com/6rainstorm/Solar-Panels-Fault-Detection" target="_blank">
+            <img src="https://badges.aleen42.com/src/github.svg" alt="GitHub">
+        </a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 st.sidebar.divider()
 
 # Data untuk anggota tim
@@ -90,11 +104,26 @@ team_members = [
 ]
 
 # Info Anggota
+linkedin_logo = "https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg"
+instagram_logo = "https://badges.aleen42.com/src/instagram.svg"
+
 for member in team_members:
     st.sidebar.markdown(f"### {member['name']}")
     st.sidebar.markdown(f"**{member['role']}**")
-    st.sidebar.markdown(f"[LinkedIn]({member['linkedin']})" "  " f"[Instagram]({member['instagram']})")
     st.sidebar.image(member['photo'], use_container_width=True)
+    st.sidebar.markdown(
+        f"""
+        <div style="position: relative; display: flex; justify-content: center; align-items: center;">
+            <a href="{member['linkedin']}" target="_blank">
+                <img src="{linkedin_logo}" alt="LinkedIn" style="width: 60px; height: 60px; margin-right: 8px;">
+            </a>
+            <a href="{member['instagram']}" target="_blank">
+                <img src="{instagram_logo}" alt="Instagram" style="width: 80px;">
+            </a>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
     st.sidebar.divider()
 
 source_img = None
@@ -184,16 +213,16 @@ elif selected_option == settings.IMAGE:
 
                     
                     # Display solution notifications below detected labels with padding
-                    st.markdown("### Solutions:")
+                    st.markdown("## Solutions:")
                     for label in unique_labels:
                         if label in settings.CLASS_NAME.values():
                             message, color = {
-                                "Snow": ("Panel tertutup salju, mohon dapat dibersihkan secepatnya!", "rgba(65, 201, 226, 0.85)"),  
-                                "Dust": ("Panel tertutup debu dan kotoran, mohon dapat dibersihkan secepatnya!", "rgba(166, 110, 56, 0.9)"),  
-                                "Bird Drop": ("Panel terdapat tai manuk, mohon dapat dibersihkan secepatnya!", "rgba(165, 157, 132)"),  
-                                "Physical Damage": ("Panel rusak! Wajib Diganti jika mengalami defective. Jika tidak, panel rusak tetapi masih dapat digunakan.", "rgba(16, 44, 87)"),  
-                                "Defective": ("Panel rusak parah! Segera ganti untuk menghindari kerusakan lebih lanjut.", "rgba(159,0,0,255)"), 
-                                "Non Defective": ("Bagus! Tetap jaga kondisi solar panel.", "rgba(50, 205, 50, 0.5)"),  
+                                "Snow": ("The panels are indicated as being covered with snow, please clear it as soon as possible!", "rgba(65, 201, 226, 0.85)"),  
+                                "Dust": ("The panels are indicated as being covered with dust or dirt, please clean it as soon as possible!", "rgba(166, 110, 56, 0.9)"),  
+                                "Bird Drop": ("The panels are indicated with bird droppings, please clean it up as soon as possible!", "rgba(165, 157, 132)"),  
+                                "Physical Damage": ("The panels are indicated to have physical damage! It's mandatory to replace the panel if it's indicated to be defective as well. Otherwise, the panel can still be used, just less optimally and efficiently.", "rgba(16, 44, 87)"),  
+                                "Defective": ("The panels are indicated to be defective or malfunctioning! Take immediate action or replace it to avoid further deterioration (depending on what detection is found).", "rgba(159,0,0,255)"), 
+                                "Non Defective": ("The panels are indicated to be in good and healthy condition! Please keep the solar panels in a stable condition for the future.", "rgba(50, 205, 50, 0.5)"),  
                             }[label]
                             st.markdown(
                                 f"""

@@ -44,8 +44,6 @@ def notify_solution(labels):
                 unsafe_allow_html=True
             )
 
-
-
 def showDetectFrame(conf, model, st_frame, image, is_display_tracking=None, tracker=None):
     # Mengubah ukuran frame agar lebih kecil untuk deteksi yang lebih cepat
     small_image = cv2.resize(image, (640, 480))  # Mengubah resolusi menjadi 640x480
