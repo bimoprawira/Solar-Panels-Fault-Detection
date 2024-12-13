@@ -151,13 +151,11 @@ elif selected_option == settings.HOWTOUSE:
       - The program will analyze the image and display the detection results with labels and suggested solutions.
 
     - **Video Detection**  
-      - Select "Video Detection" from the menu.  
       - Upload a video by clicking **"Upload"**. Supported formats include MP4, AVI, MOV, and MPEG4.  
       - Adjust the **confidence level slider** to modify detection sensitivity.  
       - The program will process the video and display the results, showing detected panels labeled as "Defective" or "Non-Defective."
 
     - **Real-Time Detection**  
-      - Select "Real-Time Detection" from the menu.  
       - Choose a camera device for live detection by clicking **"Select Device"**.  
       - Adjust the **confidence level slider** to set the detection accuracy.  
       - Click **"Start"** to begin real-time detection. The program will show live detection results with labels on the screen.
