@@ -196,11 +196,11 @@ elif selected_option == settings.IMAGE:
                     default_image_path = str(settings.DEFAULT_IMAGE)
                     default_image = PIL.Image.open(default_image_path)
                     st.image(default_image_path, caption="Original Image",
-                            use_container_width=True)
+                            use_column_width=True)
                 else:
                     uploaded_image = PIL.Image.open(source_img)
                     st.image(source_img, caption="Original Image",
-                            use_container_width=True)
+                            use_column_width=True)
                     
                     # Tombol Detect Objects di sini
                     if st.button('Detection'):
@@ -216,7 +216,7 @@ elif selected_option == settings.IMAGE:
             if source_img is None:
                 default_detected_image_path = str(settings.DEFAULT_DETECT_IMAGE)
                 default_detected_image = PIL.Image.open(default_detected_image_path)
-                st.image(default_detected_image_path, caption='Detection Result Image', use_container_width=True)
+                st.image(default_detected_image_path, caption='Detection Result Image', use_column_width=True)
             else:
                 if res_plotted is not None:
                     st.image(res_plotted, caption='Detection Result Image')
