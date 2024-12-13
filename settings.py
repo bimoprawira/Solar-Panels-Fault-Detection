@@ -14,11 +14,12 @@ ROOT = ROOT.relative_to(Path.cwd())
 
 # Mode
 HOME = 'Homepage'
+HOWTOUSE = 'How To Use'
 IMAGE = 'Image Detection'
 VIDEO = 'Video Detection'
 WEBCAM = 'Real-Time Detection'
 
-SOURCES_LIST = [HOME, IMAGE, VIDEO, WEBCAM]
+SOURCES_LIST = [HOME, HOWTOUSE, IMAGE, VIDEO, WEBCAM]
 
 # Images config
 IMAGES_DIR = ROOT / 'images'

@@ -24,6 +24,8 @@ except Exception as ex:
     print(f"Unable to load model. Check the specified path: {model_path}")
     print(ex)
 
+st.set_page_config(page_title="Solar Panel Fault Detection", page_icon="images/brainstorm.png")
+
 # Pilihan deteksi
 selected_option = st.sidebar.selectbox('', settings.SOURCES_LIST)
 
@@ -33,13 +35,13 @@ st.markdown("<br><br>", unsafe_allow_html=True)  # Adds extra space between sele
 
 # Sidebar About
 st.sidebar.markdown("# About Us")
-st.sidebar.image("images/brainstorm.png", use_container_width=True, width=400)  # Resize the image to be larger
+st.sidebar.image("images/brainstorm.png", width=400)  # Resize the image to be larger
 # Tambahkan tautan gambar YouTube dan GitHub di sidebar
 st.sidebar.markdown(
     """
-    <div style="text-align: center;">
+    <div style="position: relative; display: flex; justify-content: center; align-items: center;">
         <a href="https://youtu.be/vZlyn8Qw2o4?si=3lupeZHI5D37prC5" target="_blank">
-            <img src="https://badges.aleen42.com/src/youtube.svg" alt="YouTube">
+            <img src="https://badges.aleen42.com/src/youtube.svg" alt="YouTube"style="margin-right: 10px">
         </a>
         <a href="https://github.com/6rainstorm/Solar-Panels-Fault-Detection" target="_blank">
             <img src="https://badges.aleen42.com/src/github.svg" alt="GitHub">
@@ -105,20 +107,20 @@ team_members = [
 
 # Info Anggota
 linkedin_logo = "https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg"
-instagram_logo = "https://badges.aleen42.com/src/instagram.svg"
+instagram_logo = "https://download.logo.wine/logo/Instagram/Instagram-Logo.wine.png"
 
 for member in team_members:
     st.sidebar.markdown(f"### {member['name']}")
     st.sidebar.markdown(f"**{member['role']}**")
-    st.sidebar.image(member['photo'], use_container_width=True)
+    st.sidebar.image(member['photo'])
     st.sidebar.markdown(
         f"""
-        <div style="position: relative; display: flex; justify-content: center; align-items: center;">
+        <div style="position: relative; display: flex; justify-content: center; align-items: center; margin-bottom:0">
             <a href="{member['linkedin']}" target="_blank">
-                <img src="{linkedin_logo}" alt="LinkedIn" style="width: 60px; height: 60px; margin-right: 8px;">
+                <img src="{linkedin_logo}" alt="LinkedIn" style="width: 60px;margin-right: 8px;">
             </a>
             <a href="{member['instagram']}" target="_blank">
-                <img src="{instagram_logo}" alt="Instagram" style="width: 80px;">
+                <img src="{instagram_logo}" alt="Instagram" style="width: 50px; ">
             </a>
         </div>
         """,
@@ -131,7 +133,53 @@ source_img = None
 # Petunjuk
 if selected_option == settings.HOME:
     helper.helpFunction()
-    
+
+elif selected_option == settings.HOWTOUSE:
+    st.markdown("""
+    ### How to Use the Program
+    - **Step 1: Open the Program**
+      Launch the Solar Panel Fault Detection program. You will see the homepage with the project name, logo, and a description of its purpose.
+
+    - **Step 2: Navigate to Desired Feature**
+      Use the navigation menu on the left side of the screen to select the feature you want to use:
+      - **Image Detection**
+      - **Video Detection**
+      - **Real-Time Detection**
+
+    - **Step 3: Image Detection**
+      - Select "Image Detection" from the menu.
+      - To upload an image, click **"Upload"** and select a file from your device. Supported formats include JPG, JPEG, and PNG.
+      - Alternatively, click **"Open Camera"** to capture an image directly.
+      - Adjust the **confidence level slider** to set the desired accuracy for detection.
+      - The program will analyze the image and display the detection results with labels and suggested solutions.
+
+    - **Step 4: Video Detection**
+      - Select "Video Detection" from the menu.
+      - Upload a video by clicking **"Upload"**. Supported formats include MP4, AVI, MOV, and MPEG4.
+      - Adjust the **confidence level slider** to modify detection sensitivity.
+      - The program will process the video and display the results, showing detected panels labeled as "Defective" or "Non-Defective."
+
+    - **Step 5: Real-Time Detection**
+      - Select "Real-Time Detection" from the menu.
+      - Choose a camera device for live detection by clicking **"Select Device"**.
+      - Adjust the **confidence level slider** to set the detection accuracy.
+      - Click **"Start"** to begin real-time detection. The program will show live detection results with labels on the screen.
+
+    - **Step 6: Review the Results**
+      After the detection process, review the results displayed on the screen. The system will label the detected panels and provide a classification ("Defective" or "Non-Defective") along with possible solutions.
+
+    - **Step 7: Exit the Program**
+      After using the program, you can exit by closing the browser or stopping the Streamlit application.
+
+    ### Tips for Optimal Use
+    - Ensure uploaded images or videos are clear, well-lit, and focused to improve detection accuracy.
+    - When using the real-time detection feature, ensure the camera is positioned steadily, and the solar panels are fully visible.
+    - Adjust the confidence level appropriately—higher values may reduce false positives, but lower values may help detect minor defects.
+    - For video detection, make sure the panels are in motion or clearly visible to ensure accurate processing.
+    - Avoid using extremely low-quality images or videos, as this can lead to inaccurate results.
+    - Regularly update the program or model to ensure compatibility and optimal performance.
+    """, unsafe_allow_html=True)
+
 elif selected_option == settings.IMAGE:
     tab1, tab2 = st.tabs(["Upload", "Open Camera"])
     with tab1:
@@ -148,11 +196,11 @@ elif selected_option == settings.IMAGE:
                     default_image_path = str(settings.DEFAULT_IMAGE)
                     default_image = PIL.Image.open(default_image_path)
                     st.image(default_image_path, caption="Original Image",
-                            use_container_width=True)
+                            )
                 else:
                     uploaded_image = PIL.Image.open(source_img)
                     st.image(source_img, caption="Original Image",
-                            use_container_width=True)
+                            )
                     
                     # Tombol Detect Objects di sini
                     if st.button('Detection'):
@@ -168,7 +216,7 @@ elif selected_option == settings.IMAGE:
             if source_img is None:
                 default_detected_image_path = str(settings.DEFAULT_DETECT_IMAGE)
                 default_detected_image = PIL.Image.open(default_detected_image_path)
-                st.image(default_detected_image_path, caption='Detection Result Image', use_container_width=True)
+                st.image(default_detected_image_path, caption='Detection Result Image')
             else:
                 if res_plotted is not None:
                     st.image(res_plotted, caption='Detection Result Image')
