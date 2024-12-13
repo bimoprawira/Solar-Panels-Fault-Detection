@@ -49,7 +49,7 @@ def showDetectFrame(conf, model, st_frame, image, is_display_tracking=None, trac
     small_image = cv2.resize(image, (640, 480))  # Mengubah resolusi menjadi 640x480
     res = model.predict(small_image, conf=conf)
     res_plotted = res[0].plot()
-    st_frame.image(res_plotted, caption='Detected Video', channels="BGR")
+    st_frame.image(res_plotted, caption='Detected Image', channels="BGR")
 
 
 def play_webcam(conf, model):
