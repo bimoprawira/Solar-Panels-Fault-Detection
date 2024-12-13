@@ -136,49 +136,40 @@ if selected_option == settings.HOME:
 
 elif selected_option == settings.HOWTOUSE:
     st.markdown("""
-    ### How to Use the Program
-    - **Step 1: Open the Program**
-      Launch the Solar Panel Fault Detection program. You will see the homepage with the project name, logo, and a description of its purpose.
-
-    - **Step 2: Navigate to Desired Feature**
-      Use the navigation menu on the left side of the screen to select the feature you want to use:
+    ### How to Use the Program ⚠️
+    
+    - **Navigate to Desired Feature**  
+      Use the navigation menu on **sidebar** of the screen to select the feature you want to use:
       - **Image Detection**
       - **Video Detection**
       - **Real-Time Detection**
 
-    - **Step 3: Image Detection**
-      - Select "Image Detection" from the menu.
-      - To upload an image, click **"Upload"** and select a file from your device. Supported formats include JPG, JPEG, and PNG.
-      - Alternatively, click **"Open Camera"** to capture an image directly.
-      - Adjust the **confidence level slider** to set the desired accuracy for detection.
+    - **Image Detection**   
+      - To upload an image, click **"Upload"** and select a file from your device. Supported formats include JPG, JPEG, and PNG.  
+      - Alternatively, click **"Open Camera"** to capture an image directly.  
+      - Adjust the **confidence level slider** to set the desired accuracy for detection.  
       - The program will analyze the image and display the detection results with labels and suggested solutions.
 
-    - **Step 4: Video Detection**
-      - Select "Video Detection" from the menu.
-      - Upload a video by clicking **"Upload"**. Supported formats include MP4, AVI, MOV, and MPEG4.
-      - Adjust the **confidence level slider** to modify detection sensitivity.
+    - **Video Detection**  
+      - Select "Video Detection" from the menu.  
+      - Upload a video by clicking **"Upload"**. Supported formats include MP4, AVI, MOV, and MPEG4.  
+      - Adjust the **confidence level slider** to modify detection sensitivity.  
       - The program will process the video and display the results, showing detected panels labeled as "Defective" or "Non-Defective."
 
-    - **Step 5: Real-Time Detection**
-      - Select "Real-Time Detection" from the menu.
-      - Choose a camera device for live detection by clicking **"Select Device"**.
-      - Adjust the **confidence level slider** to set the detection accuracy.
+    - **Real-Time Detection**  
+      - Select "Real-Time Detection" from the menu.  
+      - Choose a camera device for live detection by clicking **"Select Device"**.  
+      - Adjust the **confidence level slider** to set the detection accuracy.  
       - Click **"Start"** to begin real-time detection. The program will show live detection results with labels on the screen.
 
-    - **Step 6: Review the Results**
-      After the detection process, review the results displayed on the screen. The system will label the detected panels and provide a classification ("Defective" or "Non-Defective") along with possible solutions.
-
-    - **Step 7: Exit the Program**
-      After using the program, you can exit by closing the browser or stopping the Streamlit application.
-
-    ### Tips for Optimal Use
-    - Ensure uploaded images or videos are clear, well-lit, and focused to improve detection accuracy.
+    ### Tips for Optimal Use 💡
+    - Ensure uploaded images or videos are clear and focused to improve detection accuracy.
     - When using the real-time detection feature, ensure the camera is positioned steadily, and the solar panels are fully visible.
     - Adjust the confidence level appropriately—higher values may reduce false positives, but lower values may help detect minor defects.
     - For video detection, make sure the panels are in motion or clearly visible to ensure accurate processing.
     - Avoid using extremely low-quality images or videos, as this can lead to inaccurate results.
-    - Regularly update the program or model to ensure compatibility and optimal performance.
     """, unsafe_allow_html=True)
+
 
 elif selected_option == settings.IMAGE:
     tab1, tab2 = st.tabs(["Upload", "Open Camera"])
