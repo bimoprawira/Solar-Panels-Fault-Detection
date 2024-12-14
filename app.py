@@ -35,7 +35,7 @@ st.markdown("<br><br>", unsafe_allow_html=True)  # Adds extra space between sele
 
 # Sidebar About
 st.sidebar.markdown("# About Us")
-st.sidebar.image("images/brainstorm.png", use_container_width=True)  # Resize the image to be larger
+st.sidebar.image("images/brainstorm.png", use_column_width=True)  # Resize the image to be larger
 # Tambahkan tautan gambar YouTube dan GitHub di sidebar
 st.sidebar.markdown(
     """
